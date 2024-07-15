@@ -1,0 +1,91 @@
+<div class="detail-information">
+    <!-- <img class="pic" [src]="'/userapp/src/assets/img.PNG'"> -->
+    <table mat-table [dataSource]="productDetails" class="">
+    
+
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element">
+              <img [src]="element.image" alt="Product Image" width="230" height="130">
+            </td>
+          </ng-container>
+
+      <ng-container matColumnDef="component">
+        <th mat-header-cell *matHeaderCellDef> Component </th>
+        <td mat-cell *matCellDef="let element"> {{element.component}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="observationpoint">
+        <th mat-header-cell *matHeaderCellDef> Observation </th>
+        <td mat-cell *matCellDef="let element"> {{element.observationpoint}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="optype">
+        <th mat-header-cell *matHeaderCellDef> OP Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.optype}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="worm">
+        <th mat-header-cell *matHeaderCellDef> % Worm </th>
+        <td mat-cell *matCellDef="let element"> {{element.worm}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="cracklength">
+        <th mat-header-cell *matHeaderCellDef> Crack Length </th>
+        <td mat-cell *matCellDef="let element"> {{element.cracklength}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="crackmeas">
+        <th mat-header-cell *matHeaderCellDef> Crack Measure </th>
+        <td mat-cell *matCellDef="let element"> {{element.crackmeasurement}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="crackseverity">
+        <th mat-header-cell *matHeaderCellDef> Crack Severity </th>
+        <td mat-cell *matCellDef="let element"> {{element.crackseverity}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="startingdim">
+        <th mat-header-cell *matHeaderCellDef> Starting Dim </th>
+        <td mat-cell *matCellDef="let element"> {{element.startingdim}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="usedlimit">
+        <th mat-header-cell *matHeaderCellDef> Used Limit </th>
+        <td mat-cell *matCellDef="let element"> {{element.usedlimit}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="budgetlife">
+        <th mat-header-cell *matHeaderCellDef> Budget Life </th>
+        <td mat-cell *matCellDef="let element"> {{element.budgetlife}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lifehours">
+        <th mat-header-cell *matHeaderCellDef> Life Hours </th>
+        <td mat-cell *matCellDef="let element"> {{element.lifehours}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lifetotal">
+        <th mat-header-cell *matHeaderCellDef> Life Total Projected </th>
+        <td mat-cell *matCellDef="let element"> {{element.lifetotal}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="inspectionDate">
+        <th mat-header-cell *matHeaderCellDef> Inspection Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.inspectionDate}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="deleteDetail(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
